@@ -1,4 +1,5 @@
 import { useGetListPosts } from 'queries/posts';
+import { Error, Loading } from 'common';
 
 import { PostCard } from '../PostCard';
 
@@ -6,11 +7,11 @@ export const PostOverview = () => {
   const queryPosts = useGetListPosts();
 
   if (queryPosts.isLoading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   if (queryPosts.isError) {
-    return <p>Error: Appropriate error message</p>;
+    return <Error />;
   }
 
   return (

@@ -4,6 +4,7 @@ import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import { fetchPostDetails, useGetPostDetails } from 'queries/posts';
 import { serverQueryFetch } from 'services';
 import { QUERY_KEYS } from 'services/constants';
+import { Error } from 'common';
 import GeneralLayout from 'layouts/GeneralLayout';
 import { PostDetailsContainer, PostDetailsUser } from 'modules/post/PostDetails';
 
@@ -13,7 +14,7 @@ const Page: i.NextPageComponent<Props, Queries> = ({ params }) => {
   const queryPost = useGetPostDetails({ postId: params!.postId });
 
   if (queryPost.isError) {
-    return <p>Error: Appropriate error message</p>;
+    return <Error />;
   }
 
   // Data must exist as the query is not loading or in error state

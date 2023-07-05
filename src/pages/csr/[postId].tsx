@@ -2,6 +2,7 @@ import * as i from 'types';
 
 import { useRouter } from 'hooks';
 import { useGetPostDetails } from 'queries/posts';
+import { Error, Loading } from 'common';
 import GeneralLayout from 'layouts/GeneralLayout';
 import { PostDetailsContainer, PostDetailsUser } from 'modules/post';
 
@@ -12,11 +13,11 @@ const Page: i.NextPageComponent = () => {
   const queryPost = useGetPostDetails({ postId: router.query.postId });
 
   if (queryPost.isLoading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   if (queryPost.isError) {
-    return <p>Error: Appropriate error message</p>;
+    return <Error />;
   }
 
   return (
