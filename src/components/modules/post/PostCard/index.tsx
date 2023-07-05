@@ -1,6 +1,6 @@
 import * as i from 'types';
 
-import { usePrefetchPostDetails } from 'queries/posts';
+import { usePrefetchPostDetails } from 'queries/posts/prefetch';
 
 import { PostCardContainer, PostCardTitle, PostCardLink, PostCardAction } from './styled';
 
