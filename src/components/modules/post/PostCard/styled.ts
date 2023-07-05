@@ -20,10 +20,12 @@ export const PostCardTitle = styled.h2`
 export const PostCardLink = styled(Link)`
   width: 100%;
   text-align: right;
-  flex: 2;
   color: black;
 `;
 
-export const PostCardFooter = styled.div`
+export const PostCardAction = styled.div`
   display: flex;
+  flex-direction: column;
+  flex: 2;
+  gap: 4px;
 `;

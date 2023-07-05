@@ -1,14 +1,16 @@
 import * as i from 'types';
 
-import { PostCardContainer, PostCardTitle, PostCardLink } from './styled';
+import { PostCardContainer, PostCardTitle, PostCardLink, PostCardAction } from './styled';
 
 export const PostCard = ({ post }: PostCardProps) => {
-  const method = 'ssr';
-
   return (
     <PostCardContainer>
       <PostCardTitle>{post.title}</PostCardTitle>
-      <PostCardLink to={`/${method}/${post.id}`}>Read more({method.toUpperCase()})</PostCardLink>
+      <PostCardAction>
+        <PostCardLink to={`/csr/${post.id}`}>Read more(CSR)</PostCardLink>
+        <PostCardLink to={`/ssr/${post.id}`}>Read more(SSR)</PostCardLink>
+        <PostCardLink to={`/ssg/${post.id}`}>Read more(SSG)</PostCardLink>
+      </PostCardAction>
     </PostCardContainer>
   );
 };

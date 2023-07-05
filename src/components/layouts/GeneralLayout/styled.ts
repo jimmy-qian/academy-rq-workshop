@@ -6,6 +6,6 @@ export const GeneralLayoutContainer = styled.div`
   padding: 80px 128px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 `;
