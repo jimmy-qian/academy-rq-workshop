@@ -1,5 +1,6 @@
 import * as i from 'types';
 
+import GeneralLayout from 'layouts/GeneralLayout';
 import { PostOverview } from 'modules/post';
 
 const Page: i.NextPageComponent = () => {
@@ -9,6 +10,10 @@ const Page: i.NextPageComponent = () => {
       <PostOverview />
     </>
   );
+};
+
+Page.layout = (page) => {
+  return <GeneralLayout>{page}</GeneralLayout>;
 };
 
 export default Page;

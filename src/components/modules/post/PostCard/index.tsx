@@ -1,11 +1,15 @@
 import * as i from 'types';
 
+import { PostCardContainer, PostCardTitle, PostCardLink } from './styled';
+
 export const PostCard = ({ post }: PostCardProps) => {
+  const method = 'ssr';
+
   return (
-    <div key={post.id}>
-      <h2>{post.title}</h2>
-      <p>{post.body}</p>
-    </div>
+    <PostCardContainer>
+      <PostCardTitle>{post.title}</PostCardTitle>
+      <PostCardLink to={`/${method}/${post.id}`}>Read more({method.toUpperCase()})</PostCardLink>
+    </PostCardContainer>
   );
 };
 

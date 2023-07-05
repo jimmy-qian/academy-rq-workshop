@@ -2,15 +2,25 @@ import * as i from 'types';
 import { GetServerSidePropsContext, GetStaticPaths, InferGetStaticPropsType } from 'next';
 
 import { fetchPostDetails } from 'queries/posts';
+import GeneralLayout from 'layouts/GeneralLayout';
+import { PostDetailsContainer, PostDetailsUser } from 'modules/post';
 
 // Statically Generated Pages (SSG) do not need React Query as the data are fetchecd at build time.
 const Page: i.NextPageComponent<Props, Queries> = ({ post }) => {
   return (
     <>
-      <h1>Posts overview (SSG)</h1>
-      <pre>{JSON.stringify(post)}</pre>
+      <h1>Post details (SSG)</h1>
+      <PostDetailsContainer>
+        <h1>{post.title}</h1>
+        <p>{post.body}</p>
+        <PostDetailsUser>By User#{post.userId}</PostDetailsUser>
+      </PostDetailsContainer>
     </>
   );
+};
+
+Page.layout = (page) => {
+  return <GeneralLayout>{page}</GeneralLayout>;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

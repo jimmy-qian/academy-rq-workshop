@@ -12,10 +12,11 @@ export const PostOverview = () => {
   if (queryPosts.isError) {
     return <p>Error: Appropriate error message</p>;
   }
+
   return (
     <div>
       {queryPosts.data.map((post) => (
-        <PostCard {...{ post }} />
+        <PostCard {...{ post }} key={post.id} />
       ))}
     </div>
   );
