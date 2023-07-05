@@ -4,7 +4,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { useDebounceHover } from 'hooks/useDebounceHover';
 import { QUERY_KEYS } from 'services/constants';
 
-import { fetchPostDetails } from './';
+import { fetchPostDetails } from './details';
 
 export const usePrefetchPostDetails = () => {
   const queryClient = useQueryClient();

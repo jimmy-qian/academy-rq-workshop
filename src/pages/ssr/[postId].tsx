@@ -1,7 +1,7 @@
 import * as i from 'types';
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 
-import { fetchPostDetails, useGetPostDetails } from 'queries/posts';
+import { fetchPostDetails, useGetPostDetails } from 'queries/posts/details';
 import { serverQueryFetch } from 'services';
 import { QUERY_KEYS } from 'services/constants';
 import { Error } from 'common';

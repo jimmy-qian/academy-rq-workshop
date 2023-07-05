@@ -1,7 +1,7 @@
 import * as i from 'types';
 import { GetServerSidePropsContext, GetStaticPaths, InferGetStaticPropsType } from 'next';
 
-import { fetchPostDetails } from 'queries/posts';
+import { fetchPostDetails } from 'queries/posts/details';
 import GeneralLayout from 'layouts/GeneralLayout';
 import { PostDetailsContainer, PostDetailsUser } from 'modules/post';
 

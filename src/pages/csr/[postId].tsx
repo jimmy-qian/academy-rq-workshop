@@ -1,7 +1,7 @@
 import * as i from 'types';
 
 import { useRouter } from 'hooks';
-import { useGetPostDetails } from 'queries/posts';
+import { useGetPostDetails } from 'queries/posts/details';
 import { Error, Loading } from 'common';
 import GeneralLayout from 'layouts/GeneralLayout';
 import { PostDetailsContainer, PostDetailsUser } from 'modules/post';
