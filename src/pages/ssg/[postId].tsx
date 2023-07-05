@@ -27,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: Array.from(Array(10).keys()).map((i) => ({
       params: {
-        postId: i.toString(),
+        postId: (i + 1).toString(),
       },
     })),
     fallback: true,
