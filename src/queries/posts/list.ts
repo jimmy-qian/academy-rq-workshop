@@ -20,6 +20,14 @@ export const fetchListPosts_ERROR = () => {
     });
 };
 
+export const fetchListPosts_EMPTY = () => {
+  return api
+    .get<i.Post[]>({
+      path: 'https://jsonplaceholder.typicode.com/posts',
+    })
+    .then(() => [] as i.Post[]);
+};
+
 export const useGetListPosts = () => {
   return useQuery([QUERY_KEYS.POSTS], fetchListPosts_SUCCESS);
 };

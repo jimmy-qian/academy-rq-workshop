@@ -1,5 +1,5 @@
 import { useGetListPosts } from 'queries/posts';
-import { Error, Loading } from 'common';
+import { Empty, Error, Loading } from 'common';
 
 import { PostCard } from '../PostCard';
 
@@ -16,9 +16,9 @@ export const PostOverview = () => {
 
   return (
     <div>
-      {queryPosts.data.map((post) => (
-        <PostCard {...{ post }} key={post.id} />
-      ))}
+      {queryPosts.data.length === 0 && <Empty />}
+      {queryPosts.data.length !== 0 &&
+        queryPosts.data.map((post) => <PostCard {...{ post }} key={post.id} />)}
     </div>
   );
 };
