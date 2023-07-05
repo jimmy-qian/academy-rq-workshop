@@ -1,1 +1,2 @@
-export * from './example/types';
+export * from './users/types';
+export * from './posts/types';
