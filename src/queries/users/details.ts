@@ -2,7 +2,6 @@ import * as i from 'types';
 import { useQuery } from '@tanstack/react-query';
 
 import api from 'services/api';
-import { QUERY_KEYS } from 'services/constants';
 
 export const fetchUserDetails = (payload: i.GetUserDetailsPayload) => {
   return api.get<i.User>({
@@ -10,6 +9,4 @@ export const fetchUserDetails = (payload: i.GetUserDetailsPayload) => {
   });
 };
 
-export const useGetUserDetails = (payload: i.GetUserDetailsPayload) => {
-  return useQuery([QUERY_KEYS.USERS, payload.userId], () => fetchUserDetails(payload));
-};
+// @TODO: Create a query for fetching the detail of a specific user

@@ -1,24 +1,9 @@
-import { useSelectPostsWithUsers } from 'queries/posts/selectors';
 import { Empty, Error, Loading } from 'common';
 
 import { PostCard } from '../PostCard';
 
+// @TODO: Add list of posts here
+// @TODO: Handle loading, error and empty states using <Loading />, <Error /> and <Empty /> components
 export const PostOverview = () => {
-  const queryPostsWithUsers = useSelectPostsWithUsers();
-
-  if (queryPostsWithUsers.isLoading) {
-    return <Loading />;
-  }
-
-  if (queryPostsWithUsers.isError) {
-    return <Error />;
-  }
-
-  return (
-    <div>
-      {queryPostsWithUsers.data.length === 0 && <Empty />}
-      {queryPostsWithUsers.data.length !== 0 &&
-        queryPostsWithUsers.data.map((post) => <PostCard {...{ post }} key={post.id} />)}
-    </div>
-  );
+  return <div></div>;
 };

@@ -2,7 +2,6 @@ import * as i from 'types';
 import { useQuery } from '@tanstack/react-query';
 
 import api from 'services/api';
-import { QUERY_KEYS } from 'services/constants';
 
 export const fetchListUsers = () => {
   return api.get<i.User[]>({
@@ -10,6 +9,4 @@ export const fetchListUsers = () => {
   });
 };
 
-export const useGetListUsers = () => {
-  return useQuery([QUERY_KEYS.USERS], fetchListUsers);
-};
+// @TODO: Create a query for fetching a list of users
