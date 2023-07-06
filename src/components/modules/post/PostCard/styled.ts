@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'common';
 
 export const PostCardContainer = styled.div`
-  width: max(25vw, 480px);
+  width: max(25vw, 640px);
   display: flex;
   align-items: center;
   gap: 16px;
