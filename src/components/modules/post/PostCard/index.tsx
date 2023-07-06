@@ -12,7 +12,7 @@ import {
 } from './styled';
 
 export const PostCard = ({ post }: PostCardProps) => {
-  const { onHoverPrefetchPostDetails } = usePrefetchPostDetails();
+  // const { onHoverPrefetchPostDetails } = usePrefetchPostDetails();
 
   return (
     <PostCardContainer>
@@ -21,7 +21,7 @@ export const PostCard = ({ post }: PostCardProps) => {
         <PostCardAction>
           <PostCardLink
             to={`/csr/${post.id}`}
-            onMouseEnter={() => onHoverPrefetchPostDetails({ postId: post.id.toString() })}
+            // onMouseEnter={() => onHoverPrefetchPostDetails({ postId: post.id.toString() })}
           >
             Read more(CSR)
           </PostCardLink>
