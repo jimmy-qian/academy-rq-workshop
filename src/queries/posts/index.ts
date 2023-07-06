@@ -28,8 +28,20 @@ export const fetchListPosts_EMPTY = () => {
     .then(() => [] as i.Post[]);
 };
 
+export const fetchListPosts_SLOW = () => {
+  return new Promise<i.Post[]>((resolve) =>
+    setTimeout(() => {
+      resolve(
+        api.get<i.Post[]>({
+          path: 'https://jsonplaceholder.typicode.com/posts',
+        }),
+      );
+    }, 2000),
+  );
+};
+
 export const useGetListPosts = () => {
-  return useQuery([QUERY_KEYS.POSTS], fetchListPosts_SUCCESS, {
+  return useQuery([QUERY_KEYS.POSTS], fetchListPosts_SLOW, {
     select: (data) =>
       data.map((post) => ({
         ...post,
