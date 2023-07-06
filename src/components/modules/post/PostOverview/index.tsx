@@ -1,24 +1,24 @@
-import { useGetListPosts } from 'queries/posts';
+import { useSelectPostsWithUsers } from 'queries/posts/selectors';
 import { Empty, Error, Loading } from 'common';
 
 import { PostCard } from '../PostCard';
 
 export const PostOverview = () => {
-  const queryPosts = useGetListPosts();
+  const queryPostsWithUsers = useSelectPostsWithUsers();
 
-  if (queryPosts.isLoading) {
+  if (queryPostsWithUsers.isLoading) {
     return <Loading />;
   }
 
-  if (queryPosts.isError) {
+  if (queryPostsWithUsers.isError) {
     return <Error />;
   }
 
   return (
     <div>
-      {queryPosts.data.length === 0 && <Empty />}
-      {queryPosts.data.length !== 0 &&
-        queryPosts.data.map((post) => <PostCard {...{ post }} key={post.id} />)}
+      {queryPostsWithUsers.data.length === 0 && <Empty />}
+      {queryPostsWithUsers.data.length !== 0 &&
+        queryPostsWithUsers.data.map((post) => <PostCard {...{ post }} key={post.id} />)}
     </div>
   );
 };

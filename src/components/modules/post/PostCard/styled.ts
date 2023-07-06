@@ -5,12 +5,17 @@ import { Link } from 'common';
 export const PostCardContainer = styled.div`
   width: max(25vw, 640px);
   display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px;
+  flex-direction: column;
   border-radius: 4px;
   border: 1px solid lightgray;
   margin-bottom: 16px;
+`;
+
+export const PostCardBody = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
 `;
 
 export const PostCardTitle = styled.h2`
@@ -28,4 +33,13 @@ export const PostCardAction = styled.div`
   flex-direction: column;
   flex: 2;
   gap: 4px;
+`;
+
+export const PostCardFooter = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 16px;
+  background-color: lightgray;
 `;

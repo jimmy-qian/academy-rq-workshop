@@ -29,5 +29,11 @@ export const fetchListPosts_EMPTY = () => {
 };
 
 export const useGetListPosts = () => {
-  return useQuery([QUERY_KEYS.POSTS], fetchListPosts_SUCCESS);
+  return useQuery([QUERY_KEYS.POSTS], fetchListPosts_SUCCESS, {
+    select: (data) =>
+      data.map((post) => ({
+        ...post,
+        title: `${post.title.slice(0, 1).toUpperCase()}${post.title.slice(1)}`,
+      })),
+  });
 };
